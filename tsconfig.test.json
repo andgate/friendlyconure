@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.settings.json",
+  "compilerOptions": {
+    "isolatedModules": false
+  },
+  "include": ["src", "tests"],
+  "exclude": ["dist", "node_modules"]
+}

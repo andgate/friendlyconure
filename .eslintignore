@@ -1,0 +1,4 @@
+node_modules/
+docs/
+jest.config.js
+webpack.config.js
