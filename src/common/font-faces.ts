@@ -26,7 +26,7 @@ import woff2TitilliumWebBold from '../assets/fonts/titillium-web/titillium-web-v
 // Helpers
 
 type FontSource = {
-  url: string,
+  url: string
   format: string
 }
 
@@ -37,7 +37,6 @@ const serializeFontSource = (src: FontSource): string => {
 const serializeFontSourceList = (srcList: FontSource[]): string => {
   return srcList.map(serializeFontSource).join(',')
 }
-
 
 // Font source lists
 
@@ -107,7 +106,7 @@ const titilliumWebBoldList: FontSource[] = [
   {
     url: svgTitilliumWebBold,
     format: 'svg'
-  },
+  }
 ]
 
 export function loadFontFaces() {
@@ -115,20 +114,20 @@ export function loadFontFaces() {
     fontFamily: 'Days One',
     fontStyle: 'normal',
     fontWeight: 400,
-    src: serializeFontSourceList(daysOneRegularList),
+    src: serializeFontSourceList(daysOneRegularList)
   })
 
   fontFace({
     fontFamily: 'Titillium Web',
     fontStyle: 'normal',
     fontWeight: 400,
-    src: serializeFontSourceList(titilliumWebRegularList),
+    src: serializeFontSourceList(titilliumWebRegularList)
   })
 
   fontFace({
     fontFamily: 'Titillium Web Bold',
     fontStyle: 'normal',
     fontWeight: 700,
-    src: serializeFontSourceList(titilliumWebBoldList),
+    src: serializeFontSourceList(titilliumWebBoldList)
   })
 }

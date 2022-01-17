@@ -6,7 +6,8 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'index.tsx'),
   output: {
     path: path.resolve(__dirname, 'docs'),
-    filename: 'index.js'
+    filename: 'index.js',
+    publicPath: './'
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -14,7 +15,7 @@ module.exports = {
       publicPath: './'
     },
     port: 9000,
-    hot: false,
+    hot: false
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
@@ -26,16 +27,16 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          babelrc: true,
-        },
+          babelrc: true
+        }
       },
       {
         test: /\.(ts)x?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          babelrc: true,
-        },
+          babelrc: true
+        }
       },
       {
         test: /\.txt$/i,
@@ -47,14 +48,16 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-      },
+        type: 'asset/resource'
+      }
     ]
   },
   optimization: {
-    minimizer: [new TerserPlugin({
-      extractComments: false,
-    })],
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false
+      })
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
