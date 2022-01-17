@@ -32,7 +32,7 @@ const modalContent = style({
 
 export function ImageModal(props: ImageModalProps) {
   const isVisible = props.imgSrc != null
-  const imgSrc: string = isVisible ? (props.imgSrc as string) : ''
+  const imgSrc: string = props.imgSrc || ''
   return (
     <div
       id="modal-background"

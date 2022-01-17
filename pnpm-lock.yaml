@@ -5,6 +5,7 @@ specifiers:
   '@babel/preset-env': ^7.16.5
   '@babel/preset-react': ^7.16.5
   '@babel/preset-typescript': ^7.16.5
+  '@types/body-scroll-lock': ^3.1.0
   '@types/jest': ^27.4.0
   '@types/react': ^17.0.37
   '@types/react-dom': ^17.0.11
@@ -12,8 +13,10 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.8.0
   '@typescript-eslint/parser': ^5.8.0
   babel-loader: ^8.2.3
+  body-scroll-lock: ^4.0.0-beta.0
   csstips: ^1.2.0
   csx: ^10.0.2
+  detect-browser: ^5.3.0
   eslint: ^8.6.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-html: ^6.2.0
@@ -27,6 +30,7 @@ specifiers:
   react-dom: ^17.0.2
   react-router-dom: ^6.2.1
   rimraf: ^3.0.2
+  scroll-lock: ^2.1.5
   terser-webpack-plugin: ^5.3.0
   touch: ^3.1.0
   ts-jest: ^27.1.3
@@ -41,6 +45,7 @@ devDependencies:
   '@babel/preset-env': 7.16.8_@babel+core@7.16.7
   '@babel/preset-react': 7.16.7_@babel+core@7.16.7
   '@babel/preset-typescript': 7.16.7_@babel+core@7.16.7
+  '@types/body-scroll-lock': 3.1.0
   '@types/jest': 27.4.0
   '@types/react': 17.0.38
   '@types/react-dom': 17.0.11
@@ -48,8 +53,10 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.9.1_b7b2e42b32ee097737cd3e626b10847b
   '@typescript-eslint/parser': 5.9.1_eslint@8.6.0+typescript@4.5.4
   babel-loader: 8.2.3_70acdf73bf8b5ce90b5f0f8b0b09e0d8
+  body-scroll-lock: 4.0.0-beta.0
   csstips: 1.2.0_typestyle@2.2.0
   csx: 10.0.2
+  detect-browser: 5.3.0
   eslint: 8.6.0
   eslint-config-prettier: 8.3.0_eslint@8.6.0
   eslint-plugin-html: 6.2.0
@@ -63,6 +70,7 @@ devDependencies:
   react-dom: 17.0.2_react@17.0.2
   react-router-dom: 6.2.1_react-dom@17.0.2+react@17.0.2
   rimraf: 3.0.2
+  scroll-lock: 2.1.5
   terser-webpack-plugin: 5.3.0_webpack@5.66.0
   touch: 3.1.0
   ts-jest: 27.1.3_dd7c91bd6ff034fee50a8c495c77e31c
@@ -1647,6 +1655,10 @@ packages:
       '@types/node': 17.0.8
     dev: true
 
+  /@types/body-scroll-lock/3.1.0:
+    resolution: {integrity: sha512-3owAC4iJub5WPqRhxd8INarF2bWeQq1yQHBgYhN0XLBJMpd5ED10RrJ3aKiAwlTyL5wK7RkBD4SZUQz2AAAMdA==}
+    dev: true
+
   /@types/bonjour/3.5.10:
     resolution: {integrity: sha512-p7ienRMiS41Nu2/igbJxxLDWrSZ0WxM8UQgCeO9KhoVF7cOVFkrKsiDr1EsJIla8vV3oEEjGcz11jc5yimhzZw==}
     dependencies:
@@ -2508,6 +2520,10 @@ packages:
       type-is: 1.6.18
     dev: true
 
+  /body-scroll-lock/4.0.0-beta.0:
+    resolution: {integrity: sha512-a7tP5+0Mw3YlUJcGAKUqIBkYYGlYxk2fnCasq/FUph1hadxlTRjF+gAcZksxANnaMnALjxEddmSi/H3OR8ugcQ==}
+    dev: true
+
   /bonjour/3.5.0:
     resolution: {integrity: sha1-jokKGD2O6aI5OzhExpGkK897yfU=}
     dependencies:
@@ -2993,6 +3009,10 @@ packages:
 
   /destroy/1.0.4:
     resolution: {integrity: sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=}
+    dev: true
+
+  /detect-browser/5.3.0:
+    resolution: {integrity: sha512-53rsFbGdwMwlF7qvCt0ypLM5V5/Mbl0szB7GPN8y9NCcbknYOeVVXdrXEq+90IwAfrrzt6Hd+u2E2ntakICU8w==}
     dev: true
 
   /detect-newline/3.1.0:
@@ -5754,6 +5774,10 @@ packages:
       ajv: 8.9.0
       ajv-formats: 2.1.1
       ajv-keywords: 5.1.0_ajv@8.9.0
+    dev: true
+
+  /scroll-lock/2.1.5:
+    resolution: {integrity: sha512-GN8Lp0AzXbkrPFUUNkMUruiiv019UvarNKE/SnXi+AxZRjMnDc2R22VB9RcUtL4P/uub04cKibmpHKIKTyWwYQ==}
     dev: true
 
   /select-hose/2.0.0:

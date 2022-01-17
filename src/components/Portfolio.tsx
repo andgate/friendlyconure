@@ -53,7 +53,6 @@ export function Portfolio() {
 
   function openModal(imgSrc: string) {
     setModalImgSrc(imgSrc)
-    console.log(imgSrc)
   }
 
   function closeModal() {
