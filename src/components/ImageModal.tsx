@@ -2,6 +2,8 @@ import { percent, px, rgba, viewHeight } from 'csx'
 import { useEffect, useMemo, useRef } from 'react'
 import { style } from 'typestyle'
 import { enableBodyScroll, disableBodyScroll } from 'body-scroll-lock'
+import { detect } from 'detect-browser'
+const browser = detect()
 
 export type ImageModalProps = {
   onClick: () => void
@@ -38,6 +40,12 @@ export function ImageModal(props: ImageModalProps) {
   const modalRef = useRef() as React.MutableRefObject<HTMLDivElement>
 
   useEffect(() => {
+    if (browser && browser.os == 'iOS') {
+      // iOS requires manually setting height
+      const h = 2 * window.innerHeight
+      modalRef.current.style.height = `${h}px`
+    }
+
     if (isVisible) {
       disableBodyScroll(modalRef.current, { reserveScrollBarGap: true })
       return
