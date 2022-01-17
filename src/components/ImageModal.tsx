@@ -21,7 +21,8 @@ const modalBackground = (isVisible: boolean) =>
     height: percent(100), // Full height
     overflow: 'auto', // Enable scroll
     backgroundColor: rgba(0, 0, 0, 0.8).toString(),
-    cursor: 'pointer'
+    cursor: 'pointer',
+    '-webkit-overflow-scrolling': 'touch'
   })
 
 const modalContent = style({
