@@ -23,8 +23,7 @@ const modalBackground = (isVisible: boolean) =>
     height: percent(100), // Full height
     overflow: 'auto', // Enable scroll
     backgroundColor: rgba(0, 0, 0, 0.8).toString(),
-    cursor: 'pointer',
-    '-webkit-overflow-scrolling': 'touch'
+    cursor: 'pointer'
   })
 
 const modalContent = style({
@@ -42,8 +41,8 @@ export function ImageModal(props: ImageModalProps) {
 
   useEffect(() => {
     if (browser && browser.os == 'iOS') {
-      const h = parseInt(modalRef.current.style.height)
-      modalRef.current.style.height = `${2 * h}px`
+      const h = 2 * window.innerHeight
+      modalRef.current.style.height = `${h}px`
       return // iOS support for body scroll lock is very poor
     }
 
