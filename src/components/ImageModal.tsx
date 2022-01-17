@@ -1,4 +1,4 @@
-import { percent, px, rgba, viewHeight } from 'csx'
+import { percent, px, rgba } from 'csx'
 import { useEffect, useMemo, useRef } from 'react'
 import { style } from 'typestyle'
 import { enableBodyScroll, disableBodyScroll } from 'body-scroll-lock'
@@ -17,11 +17,12 @@ const modalBackground = (isVisible: boolean) =>
     position: 'fixed', // Stay in place
     zIndex: 1, // Sit on top
     paddingTop: px(100), // Location of the box
+    paddingBottom: px(100), // Padding for ios
     left: 0,
     top: 0,
     width: percent(100), // Full width
-    height: viewHeight(200), // Full height
-    overflow: 'auto', // Enable scroll
+    height: percent(100), // Full height
+    overflowY: 'auto', // Enable scroll
     backgroundColor: rgba(0, 0, 0, 0.8).toString(),
     cursor: 'pointer'
   })
@@ -40,17 +41,22 @@ export function ImageModal(props: ImageModalProps) {
   const modalRef = useRef() as React.MutableRefObject<HTMLDivElement>
 
   useEffect(() => {
-    if (browser && browser.os == 'iOS') {
-      // iOS requires that we manually setting height
-      const h = 2 * window.innerHeight
-      modalRef.current.style.height = `${h}px`
-      return // ios scroll lock is broken
-    }
-
     if (isVisible) {
+      // scroll lock is broken on iOS
+      if (browser && browser.os == 'iOS') {
+        return
+      }
+
       disableBodyScroll(modalRef.current, { reserveScrollBarGap: true })
       return
     }
+    // scroll lock is broken on iOS
+    if (browser && browser.os == 'iOS') {
+      document.body.style.position = 'initial'
+      document.body.style.overflow = 'scroll'
+      return
+    }
+
     enableBodyScroll(modalRef.current)
   }, [isVisible])
 
