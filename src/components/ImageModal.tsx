@@ -42,6 +42,8 @@ export function ImageModal(props: ImageModalProps) {
 
   useEffect(() => {
     if (browser && browser.os == 'iOS') {
+      const h = parseInt(modalRef.current.style.height)
+      modalRef.current.style.height = `${h + 60}px`
       return // iOS support for body scroll lock is very poor
     }
 
