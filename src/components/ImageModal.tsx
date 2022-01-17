@@ -41,9 +41,10 @@ export function ImageModal(props: ImageModalProps) {
 
   useEffect(() => {
     if (browser && browser.os == 'iOS') {
-      // iOS requires manually setting height
+      // iOS requires that we manually setting height
       const h = 2 * window.innerHeight
       modalRef.current.style.height = `${h}px`
+      return // ios scroll lock is broken
     }
 
     if (isVisible) {
