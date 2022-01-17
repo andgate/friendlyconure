@@ -6,8 +6,7 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'index.tsx'),
   output: {
     path: path.resolve(__dirname, 'docs'),
-    filename: 'index.js',
-    publicPath: './'
+    filename: 'index.js'
   },
   devtool: 'inline-source-map',
   devServer: {

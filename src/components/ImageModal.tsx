@@ -1,5 +1,7 @@
 import { percent, px, rgba } from 'csx'
+import { useEffect, useMemo, useRef } from 'react'
 import { style } from 'typestyle'
+import { enableBodyScroll, disableBodyScroll } from 'body-scroll-lock'
 
 export type ImageModalProps = {
   onClick: () => void
@@ -31,10 +33,21 @@ const modalContent = style({
 })
 
 export function ImageModal(props: ImageModalProps) {
-  const isVisible = props.imgSrc != null
+  const isVisible = useMemo(() => props.imgSrc != null, [props.imgSrc])
   const imgSrc: string = props.imgSrc || ''
+  const modalRef = useRef() as React.MutableRefObject<HTMLDivElement>
+
+  useEffect(() => {
+    if (isVisible) {
+      disableBodyScroll(modalRef.current, { reserveScrollBarGap: true })
+      return
+    }
+    enableBodyScroll(modalRef.current)
+  }, [isVisible])
+
   return (
     <div
+      ref={modalRef}
       id="modal-background"
       onClick={props.onClick}
       className={modalBackground(isVisible)}>
