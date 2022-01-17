@@ -1,4 +1,4 @@
-import { percent, px, rgba } from 'csx'
+import { percent, px, rgba, viewHeight } from 'csx'
 import { useEffect, useMemo, useRef } from 'react'
 import { style } from 'typestyle'
 import { enableBodyScroll, disableBodyScroll } from 'body-scroll-lock'
@@ -20,7 +20,7 @@ const modalBackground = (isVisible: boolean) =>
     left: 0,
     top: 0,
     width: percent(100), // Full width
-    height: percent(100), // Full height
+    height: viewHeight(200), // Full height
     overflow: 'auto', // Enable scroll
     backgroundColor: rgba(0, 0, 0, 0.8).toString(),
     cursor: 'pointer'
@@ -41,8 +41,6 @@ export function ImageModal(props: ImageModalProps) {
 
   useEffect(() => {
     if (browser && browser.os == 'iOS') {
-      const h = 2 * window.innerHeight
-      modalRef.current.style.height = `${h}px`
       return // iOS support for body scroll lock is very poor
     }
 
