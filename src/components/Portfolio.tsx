@@ -26,7 +26,14 @@ const portfolioItem = style(
     cursor: 'pointer',
     marginLeft: px(25),
     marginRight: px(25),
-    marginBottom: px(36)
+    marginBottom: px(36),
+    transition: 'filter .5s',
+    filter: 'none',
+    $nest: {
+      '&:hover': {
+        filter: 'grayscale(100%)'
+      }
+    }
   }
 )
 
