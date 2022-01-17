@@ -29,10 +29,7 @@ const bioPicContainer = style(
   }
 )
 
-const bioTextContainer = style(
-  biographyTextCSS,
-  csstips.width(px(384))
-)
+const bioTextContainer = style(biographyTextCSS, csstips.width(px(384)))
 
 export function Biography() {
   return (

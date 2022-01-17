@@ -14,49 +14,41 @@ const headerRoot = style(
   }
 )
 
-const headerTitle = style(
-  websiteTitleTextCSS,
-  {
-    textAlign: 'center',
-    textDecoration: 'none',
-  }
-)
+const headerTitle = style(websiteTitleTextCSS, {
+  textAlign: 'center',
+  textDecoration: 'none'
+})
 
-const headerNavSection = style(
-  csstips.horizontal
-)
+const headerNavSection = style(csstips.horizontal)
 
-const headerNavItem = style(
-  csstips.inlineBlock,
-  {
-    textAlign: 'center',
-    minWidth: px(148),
-    width: px(148)
-  }
-)
+const headerNavItem = style(csstips.inlineBlock, {
+  textAlign: 'center',
+  minWidth: px(148),
+  width: px(148)
+})
 
-const headerNavLink = style( navItemTextCSS,
-  {
-    textDecoration: 'none',
-  }
-)
+const headerNavLink = style(navItemTextCSS, {
+  textDecoration: 'none'
+})
 
 export function Header() {
-  return <div id='header-root' className={headerRoot}>
-    <Link to='/' className={headerTitle}>
-      Raleigh Blakeway
-    </Link>
-    <div id='header-nav-section' className={headerNavSection}>
-      <div id='header-nav-item' className={headerNavItem}>
-        <Link to='/biography' className={headerNavLink}>
-          Biography
-        </Link>
-      </div>
-      <div id='header-nav-item' className={headerNavItem}>
-        <Link to='/contact' className={headerNavLink}>
-          Contact
-        </Link>
+  return (
+    <div id="header-root" className={headerRoot}>
+      <Link to="/" className={headerTitle}>
+        Raleigh Blakeway
+      </Link>
+      <div id="header-nav-section" className={headerNavSection}>
+        <div id="header-nav-item" className={headerNavItem}>
+          <Link to="/biography" className={headerNavLink}>
+            Biography
+          </Link>
+        </div>
+        <div id="header-nav-item" className={headerNavItem}>
+          <Link to="/contact" className={headerNavLink}>
+            Contact
+          </Link>
+        </div>
       </div>
     </div>
-  </div>
+  )
 }

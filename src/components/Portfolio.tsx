@@ -1,43 +1,60 @@
 import { style } from 'typestyle'
 import * as csstips from 'csstips'
-import * as csx from 'csx'
-import { px } from 'csx'
+import { percent, px } from 'csx'
 import { portfolioImages } from '../assets/images/portfolio'
+import { useState } from 'react'
+import { ImageModal } from './ImageModal'
 
-const portfolioRoot = style(
+const portfolioRoot = style(csstips.vertical, csstips.center)
+
+const portfolioListContainer = style(
   csstips.horizontal,
-  csstips.start,
   csstips.centerJustified,
   csstips.wrap,
+  csstips.width(percent(80)),
   {
-    marginTop: px(5),
-    marginLeft: px(25),
-    marginRight: px(25)
+    marginTop: px(5)
   }
 )
 
-const portfolioItemContainer = style(csstips.content, {
-  marginLeft: px(25),
-  marginRight: px(25),
-  marginBottom: px(36)
-})
-
-const portfolioItem = (imgUrl: string) =>
-  style(csstips.inlineBlock, csstips.width(px(152)), csstips.height(px(110)), {
-    backgroundImage: csx.url(imgUrl),
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center'
-  })
+const portfolioItem = style(
+  csstips.block,
+  csstips.width(px(152)),
+  csstips.height(px(110)),
+  {
+    objectFit: 'cover',
+    cursor: 'pointer',
+    marginLeft: px(25),
+    marginRight: px(25),
+    marginBottom: px(36)
+  }
+)
 
 export function Portfolio() {
+  const [modalImgSrc, setModalImgSrc] = useState<string | null>(null)
+
+  function openModal(imgSrc: string) {
+    setModalImgSrc(imgSrc)
+    console.log(imgSrc)
+  }
+
+  function closeModal() {
+    setModalImgSrc(null)
+  }
+
   return (
     <div id="portfolio-root" className={portfolioRoot}>
-      {portfolioImages.map((imgUrl) => (
-        <div className={portfolioItemContainer}>
-          <div className={portfolioItem(imgUrl)}></div>
-        </div>
-      ))}
+      <div id="portfolio-list-container" className={portfolioListContainer}>
+        {portfolioImages.map((imgUrl, i) => (
+          // Uses index as key, since portfolioImages is ultimately static
+          <img
+            key={i}
+            onClick={() => openModal(imgUrl)}
+            src={imgUrl}
+            className={portfolioItem}></img>
+        ))}
+        <ImageModal onClick={closeModal} imgSrc={modalImgSrc}></ImageModal>
+      </div>
     </div>
   )
 }
