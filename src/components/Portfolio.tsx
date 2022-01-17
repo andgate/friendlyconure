@@ -1,4 +1,4 @@
-import { style } from 'typestyle'
+import { media, style } from 'typestyle'
 import * as csstips from 'csstips'
 import { px } from 'csx'
 import { portfolioImages } from '../assets/images/portfolio'
@@ -10,10 +10,22 @@ const portfolioRoot = style(
   csstips.centerJustified,
   csstips.wrap,
   {
-    marginTop: px(5),
-    marginLeft: px(25),
-    marginRight: px(25)
-  }
+    marginTop: px(5)
+  },
+  media(
+    { maxWidth: px(699) },
+    {
+      marginLeft: px(0),
+      marginRight: px(0)
+    }
+  ),
+  media(
+    { minWidth: px(700) },
+    {
+      marginLeft: px(25),
+      marginRight: px(25)
+    }
+  )
 )
 
 const portfolioItem = style(
@@ -26,11 +38,11 @@ const portfolioItem = style(
     marginLeft: px(25),
     marginRight: px(25),
     marginBottom: px(36),
-    transition: 'filter .5s',
+    transition: 'filter .25s',
     filter: 'none',
     $nest: {
       '&:hover': {
-        filter: 'grayscale(100%)'
+        filter: 'grayscale(100%) contrast(80%)'
       }
     }
   }
