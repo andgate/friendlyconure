@@ -7,7 +7,9 @@ import * as csstips from 'csstips'
 import * as csx from 'csx'
 import { percent, px } from 'csx'
 
-const bioRoot = style(
+const bioRoot = style(csstips.vertical, csstips.center)
+
+const bioLayout = style(
   csstips.centerJustified,
   media(
     { maxWidth: px(699) },
@@ -26,6 +28,7 @@ const bioRoot = style(
     csstips.horizontal,
     csstips.horizontallySpaced(px(29)),
     {
+      width: px(700),
       marginTop: px(49),
       marginLeft: px(74),
       marginRight: px(75)
@@ -55,12 +58,14 @@ const bioTextContainer = style(
 export function Biography() {
   return (
     <div className={bioRoot}>
-      <div className={bioPicContainer}></div>
-      <div className={bioTextContainer}>
-        {bioTextParagraph1}
-        <br></br>
-        <br></br>
-        {bioTextParagraph2}
+      <div className={bioLayout}>
+        <div className={bioPicContainer}></div>
+        <div className={bioTextContainer}>
+          {bioTextParagraph1}
+          <br></br>
+          <br></br>
+          {bioTextParagraph2}
+        </div>
       </div>
     </div>
   )

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Homepage for the illustrious designer, Raleigh Blakeway.",
   "scripts": {
-    "start": "webpack serve --mode=development",
+    "start": "webpack serve --mode=development --open",
     "build": "pnpm run clean && webpack build --mode=production && nodetouch ./docs/.nojekyll",
     "clean": "rimraf docs/",
     "check": "tsc check",
