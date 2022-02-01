@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
@@ -64,6 +65,11 @@ module.exports = {
       filename: path.resolve(__dirname, 'docs', 'index.html'),
       inject: 'body',
       publicPath: './'
+    }),
+    new FaviconsWebpackPlugin({
+      logo: path.resolve(__dirname, 'favicon.png'),
+      publicPath: './',
+      prefix: './'
     })
   ]
 }
