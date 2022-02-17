@@ -20,6 +20,14 @@ import picUrl_19 from './the-olympia-free-clinic.png'
 import picUrl_20 from './vtuber-history.jpg'
 import picUrl_21 from './vtuber-parasocial-relationships.jpg'
 import picUrl_22 from './vtuber-statistics.jpg'
+import picUrl_23 from './cup.jpg'
+import picUrl_24 from './flame.jpg'
+import picUrl_25 from './globular.png'
+import picUrl_26 from './Group_1.png'
+import picUrl_27 from './moss1.jpg'
+import picUrl_28 from './moss2.jpg'
+import picUrl_29 from './student-portrait.jpg'
+import picUrl_30 from './u_can_do_it_bro_i_believe_in_you.jpg'
 
 export const portfolioImages = [
   picUrl_1,
@@ -43,5 +51,13 @@ export const portfolioImages = [
   picUrl_19,
   picUrl_20,
   picUrl_21,
-  picUrl_22
+  picUrl_22,
+  picUrl_23,
+  picUrl_24,
+  picUrl_25,
+  picUrl_26,
+  picUrl_27,
+  picUrl_28,
+  picUrl_29,
+  picUrl_30
 ]
