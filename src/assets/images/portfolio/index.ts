@@ -29,6 +29,7 @@ import picUrl_28 from './moss2.jpg'
 import picUrl_29 from './student-portrait.jpg'
 import picUrl_30 from './u_can_do_it_bro_i_believe_in_you.jpg'
 
+// List of portfolio images, sorted by oldest.
 export const portfolioImages = [
   picUrl_1,
   picUrl_2,
@@ -60,4 +61,4 @@ export const portfolioImages = [
   picUrl_28,
   picUrl_29,
   picUrl_30
-]
+].reverse() // reverse to sort by most recent
