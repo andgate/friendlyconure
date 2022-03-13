@@ -7,7 +7,7 @@
     "start": "webpack serve --mode=development --open",
     "build": "pnpm clean && pnpm build:docs",
     "build:docs": "pnpm build:prod && pnpm touch:nojekyl && pnpm copy:CNAME",
-    "build:prod": "webpack build --mode=production ",
+    "build:prod": "webpack build --mode=production",
     "touch:nojekyl": "nodetouch ./docs/.nojekyll",
     "copy:CNAME": "cpx CNAME ./docs",
     "clean": "rimraf docs/",
